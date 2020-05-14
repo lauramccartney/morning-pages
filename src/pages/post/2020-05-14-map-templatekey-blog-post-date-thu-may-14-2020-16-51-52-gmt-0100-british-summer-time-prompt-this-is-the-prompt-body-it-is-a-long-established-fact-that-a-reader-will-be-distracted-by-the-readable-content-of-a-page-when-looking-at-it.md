@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: post
 prompt: this is the prompt
 date: 2020-05-14T15:51:52.297Z
 ---
