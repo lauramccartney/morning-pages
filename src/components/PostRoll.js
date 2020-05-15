@@ -2,10 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
-import Content, { HTMLContent } from '../components/Content'
+import Content from '../components/Content'
 import Curlicue from '../components/Curlicue'
 
 class PostRoll extends React.Component {
+
+
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
@@ -38,8 +40,7 @@ class PostRoll extends React.Component {
                   ) : null}
 
                   <div className="inner-wrapper">
-
-                    <p>{post.excerpt}</p>
+                    <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
 
                     <p className="attribution">by {post.frontmatter.writer}</p>
                   </div>
@@ -71,7 +72,7 @@ export default () => (
           edges {
             node {
               id
-              excerpt(pruneLength: 2500)
+              excerpt(format: HTML, pruneLength: 2500)
               fields {
                 slug
               }
