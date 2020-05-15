@@ -5,6 +5,21 @@ module.exports = {
       'A sanctuary for sharing your morning pages.',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Merriweather`,
+            variants: [`300`]
+          },
+          {
+            family: `Muli`,
+            variants: [`400`]
+          },
+        ],
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
@@ -20,13 +35,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/img`,
-        name: 'images',
       },
     },
     'gatsby-plugin-sharp',
