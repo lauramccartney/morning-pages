@@ -1,5 +1,92 @@
 @import "~bulma/sass/utilities/initial-variables"
 
+$white: #FFFEFC
+$black: #292D2D
+$linen: #F2EAD3
+$violet: #4C3957
+
+*
+  box-sizing: border-box
+
+html
+  font-size: 14px
+
 body
   font-family: 'Muli', sans-serif
-  font-weight: 400
+  font-weight: 200
+  background-color: $white
+  color: $black
+  padding: 0 .5rem
+
+h1
+  font-family: 'Merriweather', serif
+  font-weight: 700
+  text-align: center
+  margin: 1rem 0 3rem 0
+
+p
+  line-height: 1.8
+  letter-spacing: 0.1px
+  font-size: 1.1rem
+
+a
+  color: $violet
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+
+
+.container
+  max-width: 800px
+  margin: 2rem auto
+
+.prompt a
+  font-family: 'Merriweather', serif
+  font-weight: 300
+  font-style: italic
+  font-size: 1.4rem
+  color: $black
+
+
+.curlicue
+  width: 100px
+  margin: 2rem auto
+  svg
+    width: 100%
+
+.attribution
+  font-size: 1rem
+  text-align: right
+  font-family: 'Merriweather', serif
+  font-weight: 300
+  margin: 2rem 0
+
+.featured-image
+  margin: 2rem 0
+
+.footer
+  p
+    font-size: .7rem
+    text-align: center
+
+
+@media (min-width: 768px)
+  html
+    font-size: 16px
+
+  main
+    padding: 2rem 0
+
+  h1
+    margin-top: 2rem
+
+  .inner-wrapper
+      padding: 0 2rem
+
+  .prompt
+    margin: 2rem 0
+
+@media (min-width: 992px)
+  html
+    font-size: 17px

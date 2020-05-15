@@ -6,19 +6,14 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Merriweather`,
-            variants: [`300`]
-          },
-          {
-            family: `Muli`,
-            variants: [`400`]
-          },
+          `Merriweather\:0,700;1,300`,
+          `Muli\:200`
         ],
-      },
+        display: 'swap'
+      }
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',

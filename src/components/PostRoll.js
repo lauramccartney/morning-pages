@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import Content, { HTMLContent } from '../components/Content'
-
+import Curlicue from '../components/Curlicue'
 
 class PostRoll extends React.Component {
   render() {
@@ -12,29 +12,40 @@ class PostRoll extends React.Component {
 
     return (
       <section className="container">
+
         {posts &&
           posts.map(({ node: post }) => (
               <article>
-                <header>
+                  <div className="inner-wrapper">
+                    <header>
+                      <p className="prompt">
+                        <Link to={post.fields.slug}>
+                          {post.frontmatter.prompt}
+                        </Link>
+                      </p>
+                    </header>
+                  </div>
 
                   {post.frontmatter.featuredimage ? (
+                    <div className="featured-image">
                       <PreviewCompatibleImage
                         imageInfo={{
                           image: post.frontmatter.featuredimage,
                           alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                         }}
                       />
+                    </div>
                   ) : null}
 
-                  <p className="post-meta">
-                    <Link to={post.fields.slug}>
-                      {post.frontmatter.prompt}
-                    </Link>
-                    <span>{post.frontmatter.date}</span>
-                  </p>
-                </header>
-                <p>{post.html}</p>
+                  <div className="inner-wrapper">
+
+                    <p>{post.excerpt}</p>
+
+                    <p className="attribution">by {post.frontmatter.writer}</p>
+                  </div>
+                <Curlicue />
               </article>
+
           ))}
       </section>
     )
@@ -60,7 +71,7 @@ export default () => (
           edges {
             node {
               id
-              html
+              excerpt(pruneLength: 2500)
               fields {
                 slug
               }
@@ -69,6 +80,7 @@ export default () => (
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 prompt
+                writer
                 featuredimage {
                   childImageSharp {
                     fluid(maxWidth: 120, quality: 100) {
