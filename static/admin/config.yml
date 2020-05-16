@@ -17,9 +17,10 @@ collections:
     folder: "src/pages/post"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: prompt
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "post"}
-      - {label: "Prompt", name: "title", widget: "string"}
+      - {label: "Prompt", name: "prompt", widget: "string"}
       - {label: "Written by:", name: "writer", widget: "string"}
       - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
       - {label: "Body", name: "body", widget: "markdown"}
