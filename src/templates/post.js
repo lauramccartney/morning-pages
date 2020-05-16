@@ -20,29 +20,31 @@ export const PostTemplate = ({
 
   return (
     <section className="container">
-      <div className="inner-wrapper">
-        <header>
-          <h2 className="prompt">
-              {prompt}
-          </h2>
-        </header>
-      </div>
-
-      {featuredimage ? (
-        <div className="featured-image">
-          <PreviewCompatibleImage
-            imageInfo={{
-              image: featuredimage,
-              alt: `featured image thumbnail for post ${title}`,
-            }}
-          />
+      <article>
+        <div className="inner-wrapper">
+          <header>
+            <h2 className="prompt">
+                {prompt}
+            </h2>
+          </header>
         </div>
-      ) : null}
 
-      <div className="inner-wrapper">
-        <PostContent content={content} />
-        <p className="attribution">by {writer}</p>
-      </div>
+        {featuredimage ? (
+          <div className="featured-image">
+            <PreviewCompatibleImage
+              imageInfo={{
+                image: featuredimage,
+                alt: `featured image thumbnail for post ${title}`,
+              }}
+            />
+          </div>
+        ) : null}
+
+        <div className="inner-wrapper">
+          <PostContent content={content} />
+          <p className="attribution">by {writer}</p>
+        </div>
+      </article>
     </section>
   )
 }
