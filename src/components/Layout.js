@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import './all.sass'
 import useSiteMetadata from './SiteMetadata'
-import { withPrefix } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
@@ -47,7 +47,11 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <h1>Morning Pages</h1>
+      <h1 className="main-header">
+        <Link to="/">
+          Morning Pages
+        </Link>
+      </h1>
       <main>{children}</main>
       <Footer />
     </div>

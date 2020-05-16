@@ -1,27 +1,48 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
 import { Helmet } from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+
 
 export const PostTemplate = ({
   content,
   contentComponent,
   title,
   prompt,
+  writer,
+  featuredimage,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
 
   return (
-    <section>
-      {helmet || ''}
-      <h1>
-        {prompt}
-      </h1>
-      <PostContent content={content} />
+    <section className="container">
+      <div className="inner-wrapper">
+        <header>
+          <h2 className="prompt">
+              {prompt}
+          </h2>
+        </header>
+      </div>
+
+      {featuredimage ? (
+        <div className="featured-image">
+          <PreviewCompatibleImage
+            imageInfo={{
+              image: featuredimage,
+              alt: `featured image thumbnail for post ${title}`,
+            }}
+          />
+        </div>
+      ) : null}
+
+      <div className="inner-wrapper">
+        <PostContent content={content} />
+        <p className="attribution">by {writer}</p>
+      </div>
     </section>
   )
 }
@@ -42,6 +63,9 @@ const Post = ({ data }) => {
       <PostTemplate
         content={post.html}
         contentComponent={HTMLContent}
+        prompt={post.frontmatter.prompt}
+        writer={post.frontmatter.writer}
+        featuredimage={post.frontmatter.featuredimage}
         helmet={
           <Helmet titleTemplate="%s | Post">
             <title>{`${post.frontmatter.title}`}</title>
@@ -74,6 +98,14 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         prompt
+        writer
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 120, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

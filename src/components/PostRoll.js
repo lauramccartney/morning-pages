@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
-import Content from '../components/Content'
 import Curlicue from '../components/Curlicue'
 
 class PostRoll extends React.Component {
@@ -79,7 +78,6 @@ export default () => (
               frontmatter {
                 title
                 templateKey
-                date(formatString: "MMMM DD, YYYY")
                 prompt
                 writer
                 featuredimage {
