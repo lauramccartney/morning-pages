@@ -10,4 +10,4 @@ I was screaming your name. Throwing myself in to people. Overwhelmed with the ne
 
 You were gone. I was stuck under a human ant hill. Bodies crawling over and around me. Automatons enacting their day, oblivious to the pulsing, riotous collapse happening inside of me. Here was deafening panic. There tranquility, oxygen.
 
-Through the forest of legs I saw you again in a shop window. You were smiling. I screamed myself awake. I was in bed, panting like I’d ran a race. I felt my body subside in to the sheets. My blood began to cool as I looked out of the window in to the sky. I was alone again.
+Through the forest of legs I saw you again in a shop window. You were smiling. I screamed myself awake. I was in bed, panting like I’d ran a race. I felt my body subside in to the sheets. My blood cooled as I looked out of the window in to the sky. I was alone again.
