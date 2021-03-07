@@ -1,6 +1,6 @@
 ---
 templateKey: post
-prompt: Consider the fig
+prompt: Consider the fig (working title)
 writer: Farzaneh
 featuredimage: /img/fig-sa-figs.png
 date: 2021-03-06T17:51:40.178Z
