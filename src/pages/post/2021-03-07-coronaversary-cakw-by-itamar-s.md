@@ -1,6 +1,6 @@
 ---
 templateKey: post
-prompt: Coronaversary cakw
+prompt: Coronaversary cake
 writer: Itamar S
 date: 2021-03-07T16:50:09.794Z
 ---
