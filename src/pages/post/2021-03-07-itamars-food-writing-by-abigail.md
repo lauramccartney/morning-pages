@@ -1,6 +1,6 @@
 ---
 templateKey: post
-prompt: Itamar's food writing
+prompt: Upside down
 writer: Abigail
 featuredimage: /img/44e077a8-fc6e-4548-8d94-d3e0ae26887d.jpg
 date: 2021-03-06T23:24:07.976Z
